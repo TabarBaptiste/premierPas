@@ -1,0 +1,30 @@
+@startuml uml
+
+class Personnage {
+    - _force: int
+    + getForce(): int
+    + setForce(force: int): void
+    + entrerEnContact(chose: Chose): void
+    - modifierForce(chose: Chose): void
+}
+
+class Chose {
+    - _potentielDeContact: int
+    + getPotentielDeContact(): int
+}
+
+class ChoseBienveillante {
+    <<extends>> Chose
+    + entrerEnContact(personnage: Personnage): void
+}
+
+class ChoseHostile {
+    <<extends>> Chose
+    + entrerEnContact(personnage: Personnage): void
+}
+
+Personnage "0..*" --> "1..*" Chose
+Chose <|-- ChoseBienveillante
+Chose <|-- ChoseHostile
+
+@enduml
