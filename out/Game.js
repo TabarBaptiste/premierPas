@@ -36,9 +36,9 @@ var Personnage = /** @class */ (function () {
 }());
 // Main pour les tests
 var p1 = new Personnage(80, "Alice");
-var p2 = new Personnage();
-p2.setForce(p1.getForce());
-p1.setForce(Personnage.FORCE_MOYENNE);
+var p2 = new Personnage(); // c. Personne = 0 variable p2
+p2.setForce(p1.getForce()); // e. p2 prends Force p1
+p1.setForce(Personnage.FORCE_MOYENNE); //i. Moyenne = 50
 console.log("La force du premier personnage est : " + p1.getForce());
 console.log("La force du deuxième personnage est : " + p2.getForce());
 //# sourceMappingURL=Game.js.map
